@@ -1,5 +1,8 @@
 const mongoose = require('mongoose')
+require('dotenv').config()
 
-mongoose.connect('mongodb://127.0.0.1:27017/my-ecommerce-app',{
+mongoose.connect(process.env.DATABASE,{
     useNewUrlParser:true
-})
+}).then(
+    console.log("DB connected")
+)
